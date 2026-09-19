@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Click Me</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+
+        #clickButton {
+            padding: 15px 30px;
+            font-size: 20px;
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+        }
+
+        #surprise {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: black;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+        }
+
+        #surprise img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="clickButton">CLICK ME</button>
+
+    <div id="surprise">
+        <img src="foto.png">
+    </div>
+
+    <audio id="music" src="music.mp3"></audio>
+
+    <script>
+        const button = document.getElementById("clickButton");
+        const surprise = document.getElementById("surprise");
+        const music = document.getElementById("music");
+
+        button.addEventListener("click", function() {
+            surprise.style.display = "flex";
+            music.play();
+        });
+    </script>
+
+</body>
+</html>
